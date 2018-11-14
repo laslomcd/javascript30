@@ -64,13 +64,13 @@
     }
   
     function playSound(e) {
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-      if (!audio) return;
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); // return the audio element that has the data-key code of the key that was pressed.
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`); // return the div element that has the data-key code of the key that was pressed.
+      if (!audio) return; // if no audio element exists, skip it
   
-      key.classList.add('playing');
-      audio.currentTime = 0;
-      audio.play();
+      key.classList.add('playing'); // add the class of playing when the corresponsing key is pressed
+      audio.currentTime = 0; // starts the audio file at the beginning
+      audio.play(); // plays the audio file
     }
   
     const keys = Array.from(document.querySelectorAll('.key'));
